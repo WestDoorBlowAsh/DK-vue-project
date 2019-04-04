@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <navigator></navigator>
     <router-view />
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import navigator from "@/components/navigator";
+
+export default {
+  name: "app",
+  components: {
+    navigator
+  },
+  data() {
+    return {};
+  },
+  mounted() {},
+  methods: {}
+};
+</script>
+
+<style lang="less">
+@import "~vux/src/styles/reset.less";
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
