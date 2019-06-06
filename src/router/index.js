@@ -2,7 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/views/Home";
 import Default from "@/views/Default";
-import Demo from "@/views/Demo";
+import DemoComponent from "@/views/DemoComponent";
+import DemoSlot from "@/views/DemoSlot";
 
 Vue.use(Router);
 
@@ -26,6 +27,7 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "@/views/About.vue")
     },
-    { path: "/demo", component: Demo }
+    { path: "/DemoSlot", component: DemoSlot },
+    { path: "/DemoComponent", component: DemoComponent }
   ]
 });

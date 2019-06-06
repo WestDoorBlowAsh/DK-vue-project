@@ -1,13 +1,12 @@
 <template>
   <div class="root">
-    <div class="top">导航</div>
-    <slot></slot>
+    <div>DemoSlot</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "navigator",
+  name: "DemoSlot",
   components: {},
   data() {
     return {};
@@ -22,12 +21,5 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background: yellow;
-  height: 100%;
-
-  .top {
-    height: 44px;
-    background-color: red;
-  }
 }
 </style>

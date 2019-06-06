@@ -7,7 +7,14 @@
       ref="dot"
       @onChange="onDotChange"
       :syncCount.sync="syncCount"
-    ></SelectDot>
+    >
+      <template v-slot:default="user">
+        {{ user.first }}
+      </template>
+      <template v-slot:other>
+        {{ user.first }}
+      </template>
+    </SelectDot>
     <div>{{ fullName }}</div>
   </div>
 </template>
@@ -41,8 +48,18 @@ export default {
       publicPath: process.env.BASE_URL,
       firstName: "deng",
       lastName: "kai",
-      count: 0,
-      syncCount: 0
+      count: 2,
+      syncCount: 0,
+      user: {
+        first: "yu",
+        last: "rui"
+      },
+      slotProps: {
+        user: {
+        first: "yu",
+        last: "rui"
+      },
+      }
     };
   },
   watch: {
@@ -55,7 +72,7 @@ export default {
     onClick() {
       console.log("this.$refs.dot.subCount: " + this.$refs.dot.count);
       this.fullName = "xi men";
-      console.log('this.syncCount = ', this.syncCount);
+      console.log("this.syncCount = ", this.syncCount);
     },
     onDotChange(dot) {
       this.count = dot;
@@ -70,6 +87,8 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
+  background: #f0f0f0;
+  height: 100%;
 
   .demo {
     background-color: @themeColor;
