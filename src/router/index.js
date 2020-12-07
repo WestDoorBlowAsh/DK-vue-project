@@ -4,6 +4,7 @@ import Home from "@/views/Home";
 import Default from "@/views/Default";
 import DemoComponent from "@/views/DemoComponent";
 import DemoSlot from "@/views/DemoSlot";
+import client from "@/views/socket/client";
 
 Vue.use(Router);
 
@@ -27,6 +28,9 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "@/views/About.vue")
     },
+
+    { path: "/client", component: client },
+
     { path: "/DemoSlot", component: DemoSlot },
     { path: "/DemoComponent", component: DemoComponent }
   ]

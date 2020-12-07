@@ -22,12 +22,13 @@ export default {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background: yellow;
+  // background: yellow;
   height: 100%;
 
   .top {
+    .center;
     height: 44px;
-    background-color: red;
+    // background-color: red;
   }
 }
 </style>
